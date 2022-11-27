@@ -13,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('registrar_empresas', function (Blueprint $table) {
+        Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombreEmpresa');
-            $table->string('tipoNegocioE');
-            $table->string('descripcion');
-            $table->string('horariosAtencion');
-            $table->string('diasAtencion');
-            $table->integer('numeroCelular');
-            $table->integer('numeroTelefono');
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->integer('edad');
             $table->string('direccion');
-            $table->string('correoEmpresa');
+            $table->integer('celular');
+            $table->string('genero');
+            $table->integer('ci');
+            $table->string('expedido');
+            $table->string('email');
             $table->string('password');
             $table->timestamps();
         });
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registrar_empresas');
+        Schema::dropIfExists('usuarios');
     }
 };
